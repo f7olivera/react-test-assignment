@@ -1,4 +1,7 @@
-export function login({ email, password }) {
+import { loginParameters, loginSucess, loginError } from "../utils/types";
+
+
+export function login({ email, password }: loginParameters): Promise<loginSucess|loginError> {
   return new Promise((resolve) => {
     setTimeout(() => {
       if (email === "elon@mercdev.com" && password === "twitter") {
