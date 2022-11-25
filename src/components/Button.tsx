@@ -14,12 +14,12 @@ function Button({ children, loading, onClick }: buttonProps) {
       _disabled={{
         backgroundColor: 'accent.pressed',
       }}
-      boxShadow='0 8px 24px -4px accent.alpha.50;'
+      boxShadow='0 8px 24px -4px var(--chakra-colors-accent-alpha-50);'
       _active={{
         backgroundColor: 'accent.pressed',
       }}
       _hover={{
-        boxShadow: '0 8px 24px -4px accent.alpha.100;'
+        boxShadow: '0 8px 24px -4px var(--chakra-colors-accent-alpha-100);'
       }}>
       {children}
     </ChakraButton>
