@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+.input {
+    height: 3rem !important;
+    background-color: var(--chakra-colors-gray-10);
+    border-color: var(--chakra-colors-accent-alpha-100);
+}
+
+.input-error {
+    padding-left: 1rem !important;
+    border-width: 2px !important;
+    border-color: var(--chakra-colors-red-100) !important;
+}
+
+.input-error:hover {
+    padding-left: 1rem !important;
+}
+
+.input-error:focus {
+    padding-left: 1rem !important;
+}
