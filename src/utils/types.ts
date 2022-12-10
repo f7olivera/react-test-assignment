@@ -24,6 +24,6 @@ export type profileProps = userData & {
 
 export type buttonProps = {
   children: React.ReactNode,
-  loading?: boolean,
+  isLoading?: boolean,
   onClick?: MouseEventHandler<HTMLButtonElement>
 }

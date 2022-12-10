@@ -14,16 +14,16 @@ type Inputs = {
 };
 
 function Login({ setUser }: {setUser: React.Dispatch<React.SetStateAction<userData>>}) {
-  const [loading, setLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [loginError, setLoginError] = useState('');
   const { register, handleSubmit, formState: { errors } } = useForm<Inputs>();
 
   const onSubmit: SubmitHandler<Inputs> = async data => {
-    setLoading(true);
+    setIsLoading(true);
     const loginResponse = await login({ email: data.email, password: data.password });
 
     if ('error' in loginResponse) {
-      setLoading(false);
+      setIsLoading(false);
       setLoginError(loginResponse.error);
     } else {
       setUser({ ...loginResponse.data, loggedIn: true });
@@ -72,8 +72,8 @@ function Login({ setUser }: {setUser: React.Dispatch<React.SetStateAction<userDa
         </InputGroup>
         <ErrorMessage message={errors.password?.message || loginError}/>
 
-        <Button loading={loading}>
-          {loading ?
+        <Button isLoading={isLoading}>
+          {isLoading ?
             <Image src='/i24-loader.svg'/> :
             <>
               <Text fontSize='md' mr={1.5}>Login</Text>
