@@ -1,4 +1,4 @@
-import React, { MouseEventHandler } from "react";
+import React from "react";
 
 export type loginParameters = {
   email: string,
@@ -20,10 +20,4 @@ export type userData = loginSucess["data"] & {loggedIn: boolean} | undefined;
 
 export type profileProps = userData & {
   setUser: React.Dispatch<React.SetStateAction<userData>>
-}
-
-export type buttonProps = {
-  children: React.ReactNode,
-  isLoading?: boolean,
-  onClick?: MouseEventHandler<HTMLButtonElement>
 }

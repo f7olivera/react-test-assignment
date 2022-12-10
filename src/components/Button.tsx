@@ -1,9 +1,8 @@
 import React from "react";
 import { Button as ChakraButton } from "@chakra-ui/react";
-import { buttonProps } from "../utils/types";
 
 
-function Button({ children, isLoading, onClick }: buttonProps) {
+function Button({ children, isLoading, onClick }: React.ComponentProps<typeof ChakraButton>) {
 
   return (
     <ChakraButton
