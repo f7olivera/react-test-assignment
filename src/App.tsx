@@ -10,12 +10,12 @@ function App() {
   const [user, setUser] = useState(undefined as userData);
 
   return (
-      <Flex justifyContent='center' width='100%' height='100vh' fontFamily='Inter'
-            background={'linear-gradient(-45deg, #4439FF 0%, #AC53FF 100%)'}>
-        <Layout>
-          {user ? <Profile {...user} setUser={setUser} /> : <Login setUser={setUser}/>}
-        </Layout>
-      </Flex>
+    <Flex justifyContent='center' width='100%' height='100vh' fontFamily='Inter'
+          background={'linear-gradient(-45deg, #4439FF 0%, #AC53FF 100%)'}>
+      <Layout>
+        {user ? <Profile {...user} setUser={setUser}/> : <Login setUser={setUser}/>}
+      </Layout>
+    </Flex>
   );
 }
 

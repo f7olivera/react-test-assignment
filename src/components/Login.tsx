@@ -63,8 +63,7 @@ function Login({ setUser }: {setUser: React.Dispatch<React.SetStateAction<userDa
           <InputRightElement
             height='100%'
             pointerEvents='none'
-            children={errors.password ? <Image src='/ic24-Cross.svg'/> : ''}
-          />
+            children={errors.password ? <Image src='/ic24-Cross.svg'/> : ''}/>
           <Input placeholder='Password'
                  className={joinClassNames(['input', errors.password ? 'input-error' : ''])}
                  type='password'
@@ -74,10 +73,12 @@ function Login({ setUser }: {setUser: React.Dispatch<React.SetStateAction<userDa
         <ErrorMessage message={errors.password?.message || loginError}/>
 
         <Button loading={loading}>
-          {loading ? <Image src='/i24-loader.svg'/> : <>
-            <Text fontSize='md' mr={1.5}>Login</Text>
-            <Image src='arrow.svg'/>
-          </>}
+          {loading ?
+            <Image src='/i24-loader.svg'/> :
+            <>
+              <Text fontSize='md' mr={1.5}>Login</Text>
+              <Image src='arrow.svg'/>
+            </>}
         </Button>
       </Flex>
     </>

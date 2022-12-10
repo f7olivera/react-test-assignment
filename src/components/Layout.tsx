@@ -2,7 +2,7 @@ import React from "react";
 import { Box, Flex, Image } from "@chakra-ui/react";
 
 
-function Layout({children} : { children: React.ReactNode }) {
+function Layout({ children }: {children: React.ReactNode}) {
 
   return (
     <Flex maxWidth='md' flexDirection='column' flexBasis='100%' justifyContent='start' alignItems='center'>
