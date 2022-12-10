@@ -12,7 +12,7 @@ function Profile({ avatar, name, setUser }: profileProps) {
       <Heading as='h2' size='md' fontWeight='semibold' mt='0 !important' textAlign='center' color='gray.dark'>
         That's it, {name}!
       </Heading>
-      <Button onClick={() => setUser(undefined)} isLoading={false}>
+      <Button onClick={() => setUser(undefined)}>
         <Image src='ic24-Out.svg'/>
         <Text fontSize='md'>Logout</Text>
       </Button>
