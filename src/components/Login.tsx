@@ -7,19 +7,14 @@ import ErrorMessage from "./ErrorMessage";
 import { login } from '../api';
 import { loginParameters, userData } from "../utils/types";
 import { CommonInputProps } from "../utils/constants";
-import { joinClassNames } from "../utils/joinClassNames";
 
-type Inputs = {
-  email: string,
-  password: string
-};
 
 function Login({ setUser }: {setUser: React.Dispatch<React.SetStateAction<userData>>}) {
   const [isLoading, setIsLoading] = useState(false);
   const [loginError, setLoginError] = useState('');
-  const { register, handleSubmit, formState: { errors } } = useForm<Inputs>();
+  const { register, handleSubmit, formState: { errors } } = useForm<loginParameters>();
 
-  const onSubmit: SubmitHandler<Inputs> = async data => {
+  const onSubmit: SubmitHandler<loginParameters> = async data => {
     setIsLoading(true);
     const loginResponse = await login({ email: data.email, password: data.password });
 
