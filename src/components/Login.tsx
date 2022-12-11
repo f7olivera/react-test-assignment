@@ -37,6 +37,7 @@ function Login({ setUser }: {setUser: React.Dispatch<React.SetStateAction<userDa
         </Text>
       </VStack>
       <Flex as='form' onInput={() => setLoginError('')} onSubmit={handleSubmit(onSubmit)} flexDirection='column'
+            noValidate={true}
             width='100%' gap='0.5rem'
             alignItems='center'>
         <Input error={errors.email} placeholder='Email' type='email'
