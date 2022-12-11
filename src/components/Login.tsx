@@ -39,7 +39,7 @@ function Login({ setUser }: {setUser: React.Dispatch<React.SetStateAction<userDa
       <Flex as='form' onInput={() => setLoginError('')} onSubmit={handleSubmit(onSubmit)} flexDirection='column'
             width='100%' gap='0.5rem'
             alignItems='center'>
-        <Input error={errors.email} placeHolder='Email'
+        <Input error={errors.email} placeholder='Email' type='email'
                {...CommonInputProps}
                register={register("email", {
                  required: "This field is required.",
@@ -47,7 +47,7 @@ function Login({ setUser }: {setUser: React.Dispatch<React.SetStateAction<userDa
                })}/>
         <ErrorMessage message={errors.email && (errors.email.message || "Incorrect email")}/>
 
-        <Input error={errors.password} placeHolder='Password' type='password'
+        <Input error={errors.password} placeholder='Password' type='password'
                {...CommonInputProps}
                register={register("password", { required: "This field is required." })}/>
         <ErrorMessage message={errors.password?.message || loginError}/>
