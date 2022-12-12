@@ -3,11 +3,11 @@ import { Flex } from "@chakra-ui/react";
 import Login from "./components/Login";
 import Profile from "./components/Profile";
 import Layout from "./components/Layout";
-import { userData } from "./utils/types";
+import { user } from "./utils/types";
 
 
 function App() {
-  const [user, setUser] = useState(undefined as userData);
+  const [user, setUser] = useState(undefined as user);
 
   return (
     <Flex justifyContent='center' width='100%' height='100vh' fontFamily='Inter'

@@ -5,24 +5,24 @@ import Input from "./Input";
 import Button from "./Button";
 import ErrorMessage from "./ErrorMessage";
 import { login } from '../api';
-import { loginParameters, userData } from "../utils/types";
+import { user, loginParameters, response, userData } from "../utils/types";
 import { CommonInputProps } from "../utils/constants";
 
 
-function Login({ setUser }: {setUser: React.Dispatch<React.SetStateAction<userData>>}) {
+function Login({ setUser }: {setUser: React.Dispatch<React.SetStateAction<user>>}) {
   const [isLoading, setIsLoading] = useState(false);
   const [loginError, setLoginError] = useState('');
   const { register, handleSubmit, formState: { errors } } = useForm<loginParameters>();
 
   const onSubmit: SubmitHandler<loginParameters> = async data => {
     setIsLoading(true);
-    const loginResponse = await login({ email: data.email, password: data.password });
+    const loginResponse: response<userData> = await login({ email: data.email, password: data.password });
 
-    if ('error' in loginResponse) {
+    if (loginResponse.error) {
       setIsLoading(false);
       setLoginError(loginResponse.error);
     } else {
-      setUser({ ...loginResponse.data, loggedIn: true });
+      setUser({ ...loginResponse.data as userData });
     }
   };
 

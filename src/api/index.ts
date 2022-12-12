@@ -1,7 +1,7 @@
-import { loginParameters, loginSucess, loginError } from "../utils/types";
+import { loginParameters, response, userData } from "../utils/types";
 
 
-export function login({ email, password }: loginParameters): Promise<loginSucess | loginError> {
+export function login<T>({ email, password }: loginParameters): Promise<response<userData>> {
   return new Promise((resolve) => {
     setTimeout(() => {
       if (email === "elon@mercdev.com" && password === "twitter") {
